@@ -1,0 +1,113 @@
+---
+title: Welcome to Henry William
+description: Discover Henry William, your default documentation space for organizing and managing all project documentation with ease.
+---
+
+## Overview
+
+Henry William provides a centralized space to organize, manage, and publish your project documentation. You create structured docs using MDX with powerful components, ensuring your team stays informed and productive. Access everything from a single dashboard at `https://dashboard.henrywilliam.com`.
+
+## Key Features
+
+Henry William offers tools that streamline your documentation workflow.
+
+<Columns cols={3}>
+  <Card title="MDX Components" icon="code" href="#components">
+    Build rich pages with `<Callout>`, `<Steps>`, `<Tabs>`, and more for interactive docs.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#versioning">
+    Track changes, collaborate, and maintain version history effortlessly.
+  </Card>
+  <Card title="Search & Navigation" icon="search" href="#search">
+    Full-text search and intuitive sidebar navigation keep you moving fast.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Customize your docs with the brand color `#3B82F6` for buttons and accents.
+</Callout>
+
+## Quick Start
+
+Get up and running in minutes.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://henrywilliam.com/register` with your email.
+  </Step>
+  <Step title="Set Up Space" icon="settings">
+    Create a new documentation space and invite your team.
+  </Step>
+  <Step title="Add Your First Page" icon="file-plus">
+    Use the editor to write MDX content. Start with the introduction template.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Preview and publish your docs to share the live site.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+  ```javascript
+  // Embed docs widget in your app
+  import { HenryWilliamDocs } from '@henry-william/docs-sdk';
+  
+  const docs = new HenryWilliamDocs({ spaceId: 'your-space-id' });
+  docs.render('#docs-container');
+  ```
+  ```python
+  # Python integration example
+  from henry_william import DocsClient
+  
+  client = DocsClient(api_key='YOUR_API_KEY')
+  client.embed(space_id='your-space-id', target_id='docs-container')
+  ```
+</CodeGroup>
+
+## Brand Guidelines
+
+Maintain consistency across your documentation.
+
+Use the primary brand color `#3B82F6` for interactive elements like links and buttons. Pair it with neutral grays for text (`#1F2937`, `#6B7280`).
+
+```css
+:root {
+  --brand-primary: #3B82F6;
+  --text-primary: #1F2937;
+}
+
+.button {
+  background-color: var(--brand-primary);
+  color: white;
+}
+```
+
+<Callout kind="info">
+  Download the full brand kit from the dashboard under Settings > Brand.
+</Callout>
+
+## Next Steps
+
+Explore more resources to dive deeper.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="rocket" href="/quickstart">
+    Set up your first project in under 5 minutes.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs with API keys and OAuth.
+  </Card>
+  <Card title="Advanced Components" icon="puzzle" href="/components">
+    Master all available MDX components.
+  </Card>
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    Stay updated with the latest releases.
+  </Card>
+</Columns>
+
+<Expandable title="Frequently Asked Questions" default-open="true">
+  ### How do I customize the theme?
+  Edit your space settings to apply `#3B82F6` and other colors.
+
+  ### Can I integrate with GitHub?
+  Yes, connect your repo for automatic syncs.
+</Expandable>

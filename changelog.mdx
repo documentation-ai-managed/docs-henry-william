@@ -1,0 +1,112 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in Henry William.
+---
+
+## Recent Updates
+
+Henry William releases updates regularly to enhance your documentation experience. You can find detailed release notes below, organized by version. Each release includes new features, improvements, bug fixes, and breaking changes where applicable.
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v1.2.0">
+    Advanced search and editor enhancements.
+  </Card>
+  <Card title="v1.1.0" icon="users" href="#v1.1.0">
+    Real-time collaboration tools.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v1.0.0">
+    Initial stable release.
+  </Card>
+</Columns>
+
+<Update id="v1.2.0" label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added full-text search across all documentation pages with fuzzy matching and filters.
+- Introduced version history for pages, allowing you to revert changes easily.
+- New template system for consistent documentation layouts.
+
+## Improvements
+
+- Optimized page load times by `>40%` through lazy loading.
+- Enhanced mobile responsiveness for better editing on tablets.
+
+## Bug Fixes
+
+- Fixed sync issues in multi-user editing sessions.
+- Resolved export failures for large documentation spaces.
+
+</Update>
+
+<Update id="v1.1.0" label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Real-time collaboration with live cursors and comments.
+- Integrated GitHub sync for version-controlled documentation.
+- Customizable sidebars with drag-and-drop organization.
+
+## Bug Fixes
+
+- Corrected authentication token refresh logic.
+- Fixed table rendering in preview mode.
+
+````jsx
+// Example: New GitHub sync usage
+import { syncDocs } from '@henry-william/docs-sdk';
+
+await syncDocs({
+  repo: 'your-org/your-docs',
+  branch: 'main',
+  apiKey: 'YOUR_API_KEY'
+});
+````
+
+</Update>
+
+<Update id="v1.0.0" label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core documentation editor with Markdown and MDX support.
+- Hierarchical page organization with nested folders.
+- Public sharing links with password protection.
+
+## Breaking Changes
+
+- Updated API endpoints from `/v0/` to `/v1/` prefix.
+
+## Bug Fixes
+
+- Initial stability improvements for browser compatibility.
+
+</Update>
+
+## Stay Updated
+
+<Callout kind="tip">
+Subscribe to the changelog RSS feed or join our Discord community to get notified of new releases. Enable email notifications in your account settings.
+</Callout>
+
+## Upcoming Changes
+
+<Expandable title="Preview of v1.3.0 (Coming Soon)" default-open="false">
+
+Expect AI-powered content suggestions, advanced analytics for page views, and webhook integrations for custom workflows. Track progress on [GitHub](https://github.com/henry-william/docs).
+
+</Expandable>
+
+## Contribute to Releases
+
+<Steps>
+  <Step title="Report an Issue" icon="alert-triangle">
+    Visit the [issues page](https://github.com/henry-william/docs/issues) and describe your problem.
+  </Step>
+  <Step title="Submit a Pull Request" icon="git-pull-request">
+    Fork the repo, make changes, and open a PR against the `main` branch.
+  </Step>
+  <Step title="Test the Release Candidate" icon="test-tube">
+    Download pre-release builds from the [releases page](https://github.com/henry-william/docs/releases).
+  </Step>
+</Steps>

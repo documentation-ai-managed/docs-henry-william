@@ -1,0 +1,197 @@
+---
+title: Getting Started with Henry William
+description: Set up your account and create your first documentation space to begin organizing projects quickly.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following ready:
+
+<Callout kind="info">
+
+- A modern web browser (Chrome, Firefox, or Safari)
+- An email address for account verification
+- Optional: Existing project files (Markdown, MDX, or Git repository)
+
+</Callout>
+
+Henry William provides a seamless setup process that takes under 5 minutes.
+
+## Sign Up and Log In
+
+Create your account to access the documentation platform.
+
+<Steps>
+  <Step title="Visit Henry William" icon="globe">
+
+    Navigate to [https://henrywilliam.com](https://henrywilliam.com) and click **Sign Up**.
+
+  </Step>
+  <Step title="Enter Your Details" icon="user-plus">
+
+    Provide your email, name, and a strong password. Verify your email via the confirmation link sent to your inbox.
+
+  </Step>
+  <Step title="Log In" icon="log-in">
+
+    Return to the site, enter your credentials, and select **Log In**. You land on the dashboard.
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+
+  Enable two-factor authentication during signup for added security.
+
+</Callout>
+
+## Create Your First Documentation Space
+
+Organize your projects by creating dedicated spaces.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+
+    From the dashboard, click **New Space** in the top-right corner.
+
+  </Step>
+  <Step title="Configure Space" icon="settings">
+
+    Enter a name like `My Project Docs`, select a color (`#3B82F6` for brand blue), and choose visibility (private or public).
+
+  </Step>
+  <Step title="Save and Enter" icon="check-circle">
+
+    Click **Create**. You now enter your new space's editor interface.
+
+  </Step>
+</Steps>
+
+## Import Initial Project Files
+
+Add your existing content quickly using these methods.
+
+<Tabs>
+  <Tab title="File Upload" icon="upload">
+
+    Drag and drop Markdown or MDX files directly into the editor pane.
+
+    ```
+
+    Supported formats:
+    - .md (Markdown)
+    - .mdx (MDX with components)
+    - .txt (Plain text)
+
+    ```
+
+  </Tab>
+  <Tab title="Git Repository" icon="git-branch">
+
+    Connect your GitHub repo for automatic syncing.
+
+    <Steps>
+      <Step title="Authorize GitHub">
+
+        Click **Import from Git** and authorize Henry William.
+
+      </Step>
+      <Step title="Select Repo">
+
+        Choose `your-username/my-project-docs` and specify the branch (`main`).
+
+      </Step>
+    </Steps>
+
+````bash
+git remote add henrywilliam https://github.com/your-username/my-project-docs.git
+git push henrywilliam main
+````
+
+  </Tab>
+  <Tab title="API Import" icon="api">
+
+    Use the REST API for programmatic imports.
+
+    <CodeGroup tabs="cURL,JavaScript">
+      ````bash
+      curl -X POST https://api.example.com/v1/spaces/YOUR_SPACE_ID/files \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{
+          "path": "README.md",
+          "content": "# My Project\nWelcome to the docs!"
+        }'
+      ````
+
+      ````javascript
+      const response = await fetch('https://api.example.com/v1/spaces/YOUR_SPACE_ID/files', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer YOUR_API_KEY',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          path: 'README.md',
+          content: '# My Project\nWelcome to the docs!'
+        })
+      });
+      ````
+    </CodeGroup>
+
+    Replace `YOUR_SPACE_ID` and `YOUR_API_KEY` with your values from the dashboard settings.
+
+  </Tab>
+</Tabs>
+
+## Basic Interface Tour
+
+Familiarize yourself with the key areas.
+
+<Columns cols={3}>
+  <Card title="Navigation Sidebar" icon="menu" href="#">
+
+    Access spaces, search docs, and manage settings. Use the search bar for quick file lookup.
+
+  </Card>
+  <Card title="Editor Pane" icon="edit-3" href="#">
+
+    Write and preview MDX content in real-time. Supports syntax highlighting and live previews.
+
+  </Card>
+  <Card title="Preview Panel" icon="eye" href="#">
+
+    See rendered docs with components. Toggle between desktop and mobile views.
+
+  </Card>
+</Columns>
+
+<Image
+  src="https://example.com/henry-william-dashboard.png"
+  alt="Henry William dashboard showing sidebar, editor, and preview"
+  width="1200"
+  height="600"
+/>
+
+## Next Steps
+
+You now have a fully functional documentation space.
+
+<Callout kind="success">
+
+  Explore advanced features like custom domains and team collaboration in the [settings panel](https://dashboard.example.com/settings).
+
+</Callout>
+
+<Columns cols={2}>
+  <Card title="Customize Themes" icon="palette" href="/configuration">
+
+    Apply your brand color `#3B82F6` and custom styles.
+
+  </Card>
+  <Card title="Invite Team Members" icon="users" href="/authentication">
+
+    Add collaborators with role-based access.
+
+  </Card>
+</Columns>
